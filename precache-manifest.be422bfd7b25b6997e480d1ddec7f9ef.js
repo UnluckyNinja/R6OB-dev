@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1be84fd22c1609439450",
-    "url": "/R6OB-dev/css/app.fad3d7dc.css"
+    "revision": "14d37d328f146cc19497",
+    "url": "/R6OB-dev/css/app.50721b76.css"
   },
   {
-    "revision": "0c7645e62e0cf9970a30",
-    "url": "/R6OB-dev/css/chunk-vendors.bddb2786.css"
+    "revision": "edc5b3e7bd6661a71d62",
+    "url": "/R6OB-dev/css/chunk-vendors.01ef1a05.css"
   },
   {
     "revision": "030cef323c62b21c9cc6989067ebfb8a",
@@ -428,16 +428,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/R6OB-dev/img/maps/yacht_cover.webp"
   },
   {
-    "revision": "47813442d4b0871c7d0ad6e730b8c07b",
+    "revision": "3d6a3df493e71fad5eab46da4a2deadd",
     "url": "/R6OB-dev/index.html"
   },
   {
-    "revision": "1be84fd22c1609439450",
-    "url": "/R6OB-dev/js/app.91510614.js"
+    "revision": "14d37d328f146cc19497",
+    "url": "/R6OB-dev/js/app.4ce21570.js"
   },
   {
-    "revision": "0c7645e62e0cf9970a30",
-    "url": "/R6OB-dev/js/chunk-vendors.3e77b723.js"
+    "revision": "edc5b3e7bd6661a71d62",
+    "url": "/R6OB-dev/js/chunk-vendors.9ee53189.js"
   },
   {
     "revision": "5250b0d12cf3556df9827f21c1d05dff",
