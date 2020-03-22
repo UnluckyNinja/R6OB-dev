@@ -41,13 +41,23 @@
           <!-- mini buttons just placeholder now -->
           <v-btn-toggle max="0" multiple borderless>
             <!-- single floor drag -->
-            <v-btn @click="soloDrag" small :color="draggable?'red': ''">
-              <v-icon :color="draggable?'white': ''">mdi-arrow-all</v-icon>
-            </v-btn>
+            <v-tooltip open-delay="400" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn @click="soloDrag" :color="draggable?'red': ''" v-on="on" :disabled="!enabled" small>
+                  <v-icon :color="draggable?'white': ''">mdi-arrow-all</v-icon>
+                </v-btn>
+              </template>
+              <span>{{$t('tip.single-move')}}</span>
+            </v-tooltip>
             <!-- button to reset offset -->
-            <v-btn @click="resetOffset" small>
-              <v-icon>mdi-refresh</v-icon>
-            </v-btn>
+            <v-tooltip open-delay="400" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn @click="resetOffset" v-on="on" :disabled="!enabled" small>
+                  <v-icon>mdi-refresh</v-icon>
+                </v-btn>
+              </template>
+              <span>{{$t('tip.reset-move')}}</span>
+            </v-tooltip>
           </v-btn-toggle>
         </v-col>
       </v-row>

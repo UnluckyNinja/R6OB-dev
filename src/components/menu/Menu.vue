@@ -45,7 +45,10 @@ export default class Menu extends Vue {
     picked.config.enabled = true;
     picked.config.opacity = 1;
     picked.parent!.floors.forEach((layer: any) => {
-      if (layer !== picked) layer.config.enabled = false;
+      if (layer !== picked) {
+        layer.config.enabled = false;
+        layer.config.draggable = false;
+      }
     });
   }
   public soloDrag(picked: FloorLayer) {

@@ -9,7 +9,9 @@
     }
   },
   "tip": {
-    "nomap": "Click top-left button to choose a map."
+    "nomap": "Click top-left button to choose a map.",
+    "single-move": "Enable move only for this floor",
+    "reset-move": "Reset position"
   },
   "map": {
     "bank": {
