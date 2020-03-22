@@ -97,7 +97,7 @@ export default class Menu extends Vue {
 }
 @media screen and (min-width: 800px) {
   .menu-root {
-    width: 300px;
+    min-width: 320px;
   }
 }
 </style>
