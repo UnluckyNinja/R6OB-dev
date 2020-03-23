@@ -1,27 +1,15 @@
 <template>
-  <div class="menu-root">
-    <!-- body options -->
-    <div class="menu-body d-flex flex-column" v-if="this.$store.state.map.floors">
-      <div v-if="$store.state.map" class="title">
+  <div class="menu-root d-flex flex-column">
+    <Breadcrumbs v-if="$store.state.map.id">
+      <div class="title">
         <h3>{{$t(`map.${$store.state.map.id}.name`)}}</h3>
       </div>
-      <div class="flex-grow-1 overflow-x-hidden overflow-y-auto">
-        <div
-          v-for="floor in this.$store.state.map.floors.slice().reverse()"
-          :key="floor.id"
-          style="position: relative"
-        >
-          <LayerControl
-            @solo="solo($event)"
-            @solo-drag="soloDrag($event)"
-            @update:layer-key="updateLayerKey"
-            :layer="floor"
-          ></LayerControl>
-          <v-overlay :value="!floor.image" absolute>
-            <v-progress-circular indeterminate></v-progress-circular>
-          </v-overlay>
-        </div>
-      </div>
+    </Breadcrumbs>
+    <!-- body options -->
+    <div class="menu-body d-flex flex-column overflow-hidden" v-if="this.$store.state.map.floors">
+      <router-view class="flex-grow-1 overflow-x-hidden overflow-y-auto"></router-view>
+      <!-- <MenuControls class="flex-grow-1 overflow-x-hidden overflow-y-auto">
+      </MenuControls>-->
     </div>
     <div v-else class="menu-body map-tip pa-4">
       <p>{{$t("tip.nomap")}}</p>
@@ -31,57 +19,41 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import LayerControl from './LayerControl.vue';
 import { R6Map } from '@/maps';
 import FloorLayer from '@/maps/FloorLayer';
 
+import LayerControl from './LayerControl.vue';
+import Breadcrumbs from './Breadcrumbs.vue';
+import MenuControls from '@/views/menu/MenuControls.vue';
+
 @Component({
   components: {
-    LayerControl
+    LayerControl,
+    MenuControls,
+    Breadcrumbs
   }
 })
 export default class Menu extends Vue {
-  public solo(picked: FloorLayer) {
-    picked.config.enabled = true;
-    picked.config.opacity = 1;
-    picked.parent!.floors.forEach((layer: any) => {
-      if (layer !== picked) {
-        layer.config.enabled = false;
-        layer.config.draggable = false;
-      }
-    });
-  }
-  public soloDrag(picked: FloorLayer) {
-    if (picked.config.draggable) {
-      picked.config.draggable = false;
-      return;
-    }
-    picked.config.draggable = true;
-    picked.parent!.floors.forEach((layer: any) => {
-      if (layer !== picked) layer.config.draggable = false;
-    });
-  }
-
-  public updateLayerKey(layer: any, key: string, value: any) {
-    this.$store.commit('changeLayerKey', {
-      layer,
-      key,
-      value
-    });
-    if (key === 'draggable') {
-      if (value === true) {
-        this.$store.commit('changeDraggable', false);
-      }
-      if (value === false) {
-        let allFalse = this.$store.state.layers.every((one: any) => {
-          return one.draggable === false;
-        });
-        if (allFalse) {
-          this.$store.commit('changeDraggable', true);
-        }
-      }
-    }
-  }
+  // public updateLayerKey(layer: any, key: string, value: any) {
+  //   this.$store.commit('changeLayerKey', {
+  //     layer,
+  //     key,
+  //     value
+  //   });
+  //   if (key === 'draggable') {
+  //     if (value === true) {
+  //       this.$store.commit('changeDraggable', false);
+  //     }
+  //     if (value === false) {
+  //       let allFalse = this.$store.state.layers.every((one: any) => {
+  //         return one.draggable === false;
+  //       });
+  //       if (allFalse) {
+  //         this.$store.commit('changeDraggable', true);
+  //       }
+  //     }
+  //   }
+  // }
 }
 </script>
 
@@ -93,14 +65,9 @@ export default class Menu extends Vue {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .menu-root {
-    max-width: 240px;
-  }
-}
 @media screen and (min-width: 800px) {
   .menu-root {
-    min-width: 320px;
+    width: 360px;
   }
 }
 </style>

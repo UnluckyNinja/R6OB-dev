@@ -1,11 +1,22 @@
 {
   "lang": "English",
   "ui": {
-    "map-selector":{
+    "map-selector": {
       "title": "Choose a Map",
       "filter-all": "All",
       "filter-quickplay": "Quick Match",
       "filter-ranked": "Ranked"
+    },
+    "menu": {
+      "controls": "Inspect",
+      "freedraw": "Free Draw",
+      "marks": "Marks"
+    },
+    "menu-marks": {
+      "operators": "Operators",
+      "gadgets": "Gadgets",
+      "stickers": "Stickers",
+      "text": "Text"
     }
   },
   "tip": {

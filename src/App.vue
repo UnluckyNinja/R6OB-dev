@@ -1,13 +1,6 @@
 <template>
   <v-app id="app" :style="{'--vh': heightVar+'px'}">
-    <v-navigation-drawer
-      class="overflow-visible"
-      width="auto"
-      v-model="isOpen"
-      absolute
-      floating
-      app
-    >
+    <v-navigation-drawer class="overflow-visible" width="auto" v-model="isOpen" floating app>
       <div class="d-flex flex-row">
         <AppNav @map-overlay="isMapSelectorModalActive = true"></AppNav>
         <div style="position: relative">
@@ -67,7 +60,7 @@ export default class App extends Vue {
 
   private changeMap(map: R6Map) {
     this.isMapSelectorModalActive = false;
-    this.$store.dispatch('loadMap', { mapId: map.id });
+    this.$router.push('/' + map.id).catch(() => {});
   }
 
   public mounted() {
@@ -76,6 +69,22 @@ export default class App extends Vue {
     });
 
     this.$i18n.locale = this.locale;
+
+    this.checkRouteParams();
+  }
+
+  public beforeUpdate() {
+    this.checkRouteParams();
+  }
+
+  checkRouteParams() {
+    if (
+      this.$route.params &&
+      this.$route.params.mapId &&
+      this.$route.params.mapId !== this.$store.state.map.id
+    ) {
+      this.$store.dispatch('loadMap', { mapId: this.$route.params.mapId });
+    }
   }
 
   public get locale() {

@@ -50,6 +50,10 @@ export default new Vuex.Store({
     loadMap({ state, commit }, { mapId, blueprint = false }: { mapId: string, blueprint: boolean; }) {
       let map = maps[mapId];
 
+      if (!map) {
+        throw 'Invalid map id: ' + mapId;
+      }
+
       let files: string[];
 
       // determine which set of images to display
@@ -73,10 +77,10 @@ export default new Vuex.Store({
 
         layer.load(requireMapFile(file));
 
-        maplayer.setFloor(idx-1, layer); // it starts from 1
+        maplayer.setFloor(idx - 1, layer); // it starts from 1
       });
-      
-      maplayer.floors[maplayer.floors.length-1].config.enabled = true;
+
+      maplayer.floors[maplayer.floors.length - 1].config.enabled = true;
 
       commit('changeMap', maplayer);
 
