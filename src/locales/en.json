@@ -14,10 +14,15 @@
     },
     "menu-marks": {
       "operators": "Operators",
-      "gadgets": "Gadgets",
       "stickers": "Stickers",
       "text": "Text"
     }
+  },
+  "operator":{
+    "attacker": "Attacker",
+    "attackers": "Attackers",
+    "defender": "Defender",
+    "defenders": "Defenders"
   },
   "tip": {
     "nomap": "Click top-left button to choose a map.",

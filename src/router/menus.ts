@@ -22,11 +22,6 @@ export const MARKS = [
     i18n: 'ui.menu-marks.operators'
   },
   {
-    to: 'gadget',
-    icon: 'mdi-tablet',
-    i18n: 'ui.menu-marks.gadgets'
-  },
-  {
     to: 'sticker',
     icon: 'mdi-sticker-emoji',
     i18n: 'ui.menu-marks.stickers'

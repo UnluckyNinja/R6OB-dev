@@ -66,13 +66,6 @@ const routes: RouteConfig[] = [
             },
           },
           {
-            path: 'gadget',
-            component: GadgetList,
-            meta: {
-              i18n: 'ui.menu-marks.gadgets'
-            },
-          },
-          {
             path: 'sticker',
             component: StickerList,
             meta: {
