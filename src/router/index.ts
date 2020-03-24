@@ -6,9 +6,9 @@ import MenuControls from '@/views/menu/MenuControls.vue';
 import MenuFreedraw from '@/views/menu/MenuFreedraw.vue';
 import MenuMarks from '@/views/menu/MenuMarks.vue';
 
-import GadgetList from '@/components/menu/stickers/GadgetList.vue';
-import OperatorList from '@/components/menu/stickers/OperatorList.vue';
-import StickerList from '@/components/menu/stickers/StickerList.vue';
+import GadgetList from '@/components/menu/marks/GadgetList.vue';
+import OperatorList from '@/components/menu/marks/OperatorList.vue';
+import StickerList from '@/components/menu/marks/StickerList.vue';
 
 import { HOME, MARKS } from '@/router/menus';
 
