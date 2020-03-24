@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/R6OB-dev/precache-manifest.be422bfd7b25b6997e480d1ddec7f9ef.js"
+  "/R6OB-dev/precache-manifest.97efdaff84c031a8ea98a1181df47bdd.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "r6ob"});
