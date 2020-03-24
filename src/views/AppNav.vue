@@ -52,7 +52,7 @@ export default class AppNav extends Vue {}
 <style lang="scss" scoped>
 .nav-root {
   height: 100vh;
-
+  user-select: none;
   .nav-main {
     display: flex;
     max-height: 100vh;

@@ -3,6 +3,7 @@
     <v-row dense>
       <v-col class="my-4" v-for="(item,i) in menuList" :key="i" cols="6">
         <v-card
+          draggable="false"
           width="120px"
           height="120px"
           class="d-flex flex-column ma-auto"
