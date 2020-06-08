@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ca73a479ca5e687cc023",
+    "revision": "f7b391d363b1aec3bed5",
     "url": "/R6OB-dev/css/app.5da005db.css"
   },
   {
@@ -884,12 +884,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/R6OB-dev/img/zofia_badge.50b3d9f7.webp"
   },
   {
-    "revision": "0e6b30cb0d66b23e7870099911d56510",
+    "revision": "6d1c4e97d3077469a9fc5eb55bc43ab1",
     "url": "/R6OB-dev/index.html"
   },
   {
-    "revision": "ca73a479ca5e687cc023",
-    "url": "/R6OB-dev/js/app.aa42885d.js"
+    "revision": "f7b391d363b1aec3bed5",
+    "url": "/R6OB-dev/js/app.d056952a.js"
   },
   {
     "revision": "c2d7bcbeed0cd8a46275",
